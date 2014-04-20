@@ -1,10 +1,10 @@
-App = Ember.Application.create();
+TrelloApp = Ember.Application.create();
 
-App.Router.map(function() {
+TrelloApp.Router.map(function() {
   // put your routes here
 });
 
-App.IndexRoute = Ember.Route.extend({
+TrelloApp.IndexRoute = Ember.Route.extend({
   model: function() {
     return ['red', 'yellow', 'blue'];
   }
