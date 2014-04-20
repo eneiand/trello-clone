@@ -6,3 +6,12 @@ TrelloApp.Board = DS.Model.extend({
     hasUpdates: DS.attr('boolean'),
     isStarred: DS.attr('boolean')
 });
+
+TrelloApp.Board.FIXTURES = [
+    {
+        id: 1,
+        name: 'Learn Ember.js',
+        owner: 'eneiand',
+        hasUpdates: false
+    }
+];
