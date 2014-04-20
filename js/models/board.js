@@ -13,5 +13,11 @@ TrelloApp.Board.FIXTURES = [
         name: 'Learn Ember.js',
         owner: 'eneiand',
         hasUpdates: false
+    },
+    {
+        id: 2,
+        name: 'Regard',
+        owner: 'eneiand',
+        hasUpdates: true
     }
 ];
