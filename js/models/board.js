@@ -2,7 +2,7 @@
 
 TrelloApp.Board = DS.Model.extend({
     name: DS.attr('string'),
-    owner: DS.attr('string'),
+    isMine: DS.attr('boolean'),
     hasUpdates: DS.attr('boolean'),
     isStarred: DS.attr('boolean')
 });
@@ -11,13 +11,13 @@ TrelloApp.Board.FIXTURES = [
     {
         id: 1,
         name: 'Learn Ember.js',
-        owner: 'eneiand',
+        isMine: true,
         hasUpdates: false
     },
     {
         id: 2,
         name: 'Regard',
-        owner: 'eneiand',
+        isMine: false,
         hasUpdates: true
     }
 ];
