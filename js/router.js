@@ -12,7 +12,8 @@ TrelloApp.BoardsRoute = Ember.Route.extend({
   },
   renderTemplate: function () {
     this.render();
-    this.render('mine', {into: 'boards', outlet: 'myBoards'});
-    this.render('other', {into: 'boards', outlet: 'other'});
+    this.render('boards/mine', {into: 'boards', outlet: 'myBoards'});
+    this.render('boards/other', {into: 'boards', outlet: 'other'});
   }
 });
+

@@ -19,5 +19,11 @@ TrelloApp.Board.FIXTURES = [
         name: 'Regard',
         isMine: false,
         hasUpdates: true
+    },
+    {
+        id: 3,
+        name: 'Some other proj',
+        isMine: false,
+        hasUpdates: true
     }
 ];

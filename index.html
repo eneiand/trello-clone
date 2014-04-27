@@ -15,20 +15,24 @@
     </ul>
   </script>
 
-  <script type="text/x-handlebars" data-template-name="mine">
+  <script type="text/x-handlebars" data-template-name="boards/mine">
     <h3>My Boards</h3>
     <ul>
       {{#each}}
+        {{#if isMine}}
         <li>{{name}}</li>
+        {{/if}}
       {{/each}}
     </ul>
   </script>
     
-  <script type="text/x-handlebars" data-template-name="other">
+  <script type="text/x-handlebars" data-template-name="boards/other">
     <h3>Other Boards</h3>
     <ul>
       {{#each}}
-        <li>{{name}}</li>
+        {{#unless isMine}}
+            <li>{{name}}</li>
+        {{/unless}}
       {{/each}}
     </ul>
   </script>
