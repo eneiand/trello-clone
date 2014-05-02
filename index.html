@@ -22,10 +22,10 @@
   
   <script type="text/x-handlebars" data-template-name="boards/starred">
     <h3>{{#link-to 'boards.starred'}}Starred Boards{{/link-to}}</h3>
-    <ul>
+    <ul class="boards">
       {{#each}}
         {{#if isStarred}}
-          <li><div {{bind-attr class=":board hasUpdates"}}>{{name}}</div></li>
+          <li {{bind-attr class=":board hasUpdates"}}>{{name}}</li>
         {{/if}}
       {{/each}}
     </ul>
@@ -33,11 +33,11 @@
 
   <script type="text/x-handlebars" data-template-name="boards/mine">
     <h3>{{#link-to 'boards.mine'}}My Boards{{/link-to}}</h3>
-    <ul>
+    <ul class="boards">
       {{#each}}
         {{#unless isStarred}}
           {{#if isMine}}
-            <li><div {{bind-attr class=":board hasUpdates"}}>{{name}}</div></li>
+            <li {{bind-attr class=":board hasUpdates"}}>{{name}}</li>
           {{/if}}
         {{/unless}}
       {{/each}}
@@ -46,11 +46,11 @@
     
   <script type="text/x-handlebars" data-template-name="boards/other">
     <h3>{{#link-to 'boards.other'}}Other Boards{{/link-to}}</h3>
-    <ul>
+    <ul class="boards">
       {{#each}}
         {{#unless isStarred}}
           {{#unless isMine}}
-            <li><div {{bind-attr class=":board hasUpdates"}}>{{name}}</div></li>
+            <li {{bind-attr class=":board hasUpdates"}}>{{name}}</li>
           {{/unless}}
         {{/unless}}
       {{/each}}

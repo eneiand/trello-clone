@@ -2,3 +2,14 @@
 .ember-application {
     margin: 20px;
 }
+
+.boards ul
+{
+  list-style: none;
+}
+
+.boards li
+{
+  display: inline;
+  padding-right: 20px;
+}
