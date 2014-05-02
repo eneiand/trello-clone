@@ -10,8 +10,20 @@
     
   <script type="text/x-handlebars" id="boards">
     <h2>Boards</h2>
+      {{outlet starred}}
       {{outlet myBoards}}
       {{outlet other}}
+    </ul>
+  </script>
+  
+  <script type="text/x-handlebars" data-template-name="boards/starred">
+    <h3>Starred Boards</h3>
+    <ul>
+      {{#each}}
+        {{#if isStarred}}
+          <li><div {{bind-attr class=":board hasUpdates"}}>{{name}}</div></li>
+        {{/if}}
+      {{/each}}
     </ul>
   </script>
 
@@ -19,9 +31,11 @@
     <h3>My Boards</h3>
     <ul>
       {{#each}}
-        {{#if isMine}}
-        <li>{{name}}</li>
-        {{/if}}
+        {{#unless isStarred}}
+          {{#if isMine}}
+            <li><div {{bind-attr class=":board hasUpdates"}}>{{name}}</div></li>
+          {{/if}}
+        {{/unless}}
       {{/each}}
     </ul>
   </script>
@@ -30,8 +44,10 @@
     <h3>Other Boards</h3>
     <ul>
       {{#each}}
-        {{#unless isMine}}
-            <li>{{name}}</li>
+        {{#unless isStarred}}
+          {{#unless isMine}}
+            <li><div {{bind-attr class=":board hasUpdates"}}>{{name}}</div></li>
+          {{/unless}}
         {{/unless}}
       {{/each}}
     </ul>

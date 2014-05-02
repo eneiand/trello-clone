@@ -12,7 +12,7 @@ TrelloApp.Board.FIXTURES = [
         id: 1,
         name: 'Learn Ember.js',
         isMine: true,
-        hasUpdates: false
+        hasUpdates: true
     },
     {
         id: 2,
@@ -24,6 +24,13 @@ TrelloApp.Board.FIXTURES = [
         id: 3,
         name: 'Some other proj',
         isMine: false,
-        hasUpdates: true
+        hasUpdates: false
+    },
+    {
+        id: 4,
+        name: 'Starred proj',
+        isMine: false,
+        hasUpdates: false,
+        isStarred: true
     }
 ];
