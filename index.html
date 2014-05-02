@@ -9,6 +9,10 @@
 <body>  
     
   <script type="text/x-handlebars" id="boards">
+    {{outlet}}
+  </script>  
+  
+  <script type="text/x-handlebars" id="boards/index">
     <h2>Boards</h2>
       {{outlet starred}}
       {{outlet myBoards}}
@@ -17,7 +21,7 @@
   </script>
   
   <script type="text/x-handlebars" data-template-name="boards/starred">
-    <h3>Starred Boards</h3>
+    <h3>{{#link-to 'boards.starred'}}Starred Boards{{/link-to}}</h3>
     <ul>
       {{#each}}
         {{#if isStarred}}
@@ -28,7 +32,7 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="boards/mine">
-    <h3>My Boards</h3>
+    <h3>{{#link-to 'boards.mine'}}My Boards{{/link-to}}</h3>
     <ul>
       {{#each}}
         {{#unless isStarred}}
@@ -41,7 +45,7 @@
   </script>
     
   <script type="text/x-handlebars" data-template-name="boards/other">
-    <h3>Other Boards</h3>
+    <h3>{{#link-to 'boards.other'}}Other Boards{{/link-to}}</h3>
     <ul>
       {{#each}}
         {{#unless isStarred}}
