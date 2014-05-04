@@ -41,7 +41,11 @@
     <ul class="boards">
       {{#each}}
         {{#if isStarred}}
-          <li {{bind-attr class=":board hasUpdates"}}>{{name}}</li>
+          <li>
+            <div {{bind-attr class=":board hasUpdates"}}>
+              {{#link-to 'board' this}} {{name}} {{/link-to}}
+            </div>
+          </li>
         {{/if}}
       {{/each}}
     </ul>
@@ -53,7 +57,9 @@
       {{#each}}
         {{#unless isStarred}}
           {{#if isMine}}
-            <li {{bind-attr class=":board hasUpdates"}}>{{name}}</li>
+            <div {{bind-attr class=":board hasUpdates"}}>
+              {{#link-to 'board' this}} {{name}} {{/link-to}}
+            </div>
           {{/if}}
         {{/unless}}
       {{/each}}
@@ -66,7 +72,9 @@
       {{#each}}
         {{#unless isStarred}}
           {{#unless isMine}}
-            <li {{bind-attr class=":board hasUpdates"}}>{{name}}</li>
+            <div {{bind-attr class=":board hasUpdates"}}>
+              {{#link-to 'board' this}} {{name}} {{/link-to}}
+            </div>
           {{/unless}}
         {{/unless}}
       {{/each}}
