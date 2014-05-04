@@ -7,7 +7,11 @@ TrelloApp.Router.map(function () {
     this.route('mine');
     this.route('other');
     this.route('starred');
-    this.resource('board', { path: '/:board_id'});
+    this.resource('board', { path: '/:board_id'}, function(){
+      this.resource('list', {path: '/:list_id'}, function(){
+        this.resource('card', {path: '/:card_id'});
+      });
+    });
   });
 });
 

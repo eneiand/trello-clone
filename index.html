@@ -26,6 +26,11 @@
 
   <script type="text/x-handlebars" id="board">
     <h2>{{name}}</h2>
+    <ul class="lists">
+      {{#each list in lists}}
+        <li>{{list.name}}</li>
+      {{/each}}
+    </ul>
   </script>
   
   
@@ -90,8 +95,12 @@
   <script src="http://builds.emberjs.com/tags/v1.0.0-beta.7/ember-data.js"></script>
   <script src="js/app.js"></script>
   <script src="js/router.js"></script>
-  <script src="js/models/board.js"></script>
+  
   <script src="js/models/user.js"></script>
+  <script src="js/models/list.js"></script>
+  <script src="js/models/board.js"></script>
+  <script src="js/models/card.js"></script>
+  <script src="js/models/organisation.js"></script>
   <script src="js/controllers/applicationController.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
