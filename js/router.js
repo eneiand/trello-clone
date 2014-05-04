@@ -7,6 +7,7 @@ TrelloApp.Router.map(function () {
     this.route('mine');
     this.route('other');
     this.route('starred');
+    this.resource('board', { path: '/:board_id'});
   });
 });
 
@@ -20,13 +21,7 @@ TrelloApp.ApplicationRoute = Ember.Route.extend({
 });
 
 
-TrelloApp.ApplicationController = Ember.ObjectController.extend({
-  altName: function() {
-    return this.get('name') + ' (' + this.get('userName') +')';
-  }.property('name', 'userName') 
-});
   
-
 TrelloApp.BoardsIndexRoute = Ember.Route.extend({
   model: function () {
     return this.store.find('board');
