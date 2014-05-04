@@ -8,19 +8,24 @@
 </head>
 <body>  
     
-  <script type="text/x-handlebars" id="application">
-    <div id="header">
-      <button>Boards</button>
-      {{input value="search.."}}
-      <a href="/" title="Go back to your boards page.">Trello-clone</a>
-      <button title="Add a new board or organization">+</button>
-      <span id="user">
-        <img height="30" width="30" {{bind-attr src=avatar}} {{bind-attr alt=altName}} {{bind-attr title=altName}} >
-        <button>{{name}}</button>
-      </span>
-      <button title="Nofications. Click to view notifications."></button>
-    </div>
-    {{outlet}}
+<script type="text/x-handlebars" id="application">
+  <div id="header">
+    <button>Boards</button>
+    {{input value="search.."}}
+    <a href="/" title="Go back to your boards page.">Trello-clone</a>
+    <button title="Add a new board or organization">+</button>
+    <span id="user">
+      <img height="30" width="30" {{bind-attr src=avatar}} {{bind-attr alt=altName}} {{bind-attr title=altName}} >
+      <button>{{name}}</button>
+    </span>
+    <button title="Nofications. Click to view notifications."></button>
+  </div>
+  {{outlet}}
+</script>
+  
+
+  <script type="text/x-handlebars" id="board">
+    <h2>{{name}}</h2>
   </script>
   
   

@@ -20,6 +20,11 @@ TrelloApp.ApplicationRoute = Ember.Route.extend({
   }
 });
 
+TrelloApp.BoardRoute = Ember.Route.extend({
+  model: function(params){
+    return this.store.find('board', params.board_id);
+  }
+});
 
   
 TrelloApp.BoardsIndexRoute = Ember.Route.extend({
