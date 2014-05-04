@@ -2,22 +2,33 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ember Starter Kit</title>
+  <title>Trello-clone</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>  
     
-  <script type="text/x-handlebars" id="boards">
+  <script type="text/x-handlebars" id="application">
+    <div id="header">
+      <button>Boards</button>
+      {{input value="search.."}}
+      <a href="/" title="Go back to your boards page.">Trello-clone</a>
+      <button title="Add a new board or organization">+</button>
+      <span id="user">
+        <img height="30" width="30" src="https://trello-avatars.s3.amazonaws.com/1378ca16aeaf89666a5666e6dc3f654c/30.png" alt="Neil Anderson (neilanderson)" title="Neil Anderson (neilanderson)">
+        <button>Neil Anderson</button>
+      </span>
+      <button title="Nofications. Click to view notifications."></button>
+    </div>
     {{outlet}}
-  </script>  
+  </script>
   
-  <script type="text/x-handlebars" id="boards/index">
+  
+ <script type="text/x-handlebars" id="boards/index">
     <h2>Boards</h2>
       {{outlet starred}}
       {{outlet myBoards}}
       {{outlet other}}
-    </ul>
   </script>
   
   <script type="text/x-handlebars" data-template-name="boards/starred">
