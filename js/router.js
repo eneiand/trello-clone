@@ -10,6 +10,23 @@ TrelloApp.Router.map(function () {
   });
 });
 
+
+TrelloApp.ApplicationRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('user').then(function(result){
+      return result.get('firstObject');
+    });
+  }
+});
+
+
+TrelloApp.ApplicationController = Ember.ObjectController.extend({
+  altName: function() {
+    return this.get('name') + ' (' + this.get('userName') +')';
+  }.property('name', 'userName') 
+});
+  
+
 TrelloApp.BoardsIndexRoute = Ember.Route.extend({
   model: function () {
     return this.store.find('board');
