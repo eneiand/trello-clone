@@ -25,7 +25,12 @@
   
 
   <script type="text/x-handlebars" id="board">
-    <h2>{{name}}</h2>
+    <div id="board-header">
+      <img height="30" width="30" {{bind-attr src=organisation.avatar}} {{bind-attr alt=organisation.altName}} {{bind-attr title=organisation.altName}} >
+      {{name}}
+      <span id="org-name">{{organisation.name}}</span> 
+    </div>
+    
     <div class="lists">
       <ul>
         {{#each list in lists}}

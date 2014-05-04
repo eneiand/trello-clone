@@ -7,7 +7,8 @@ TrelloApp.Board = DS.Model.extend({
     isStarred: DS.attr('boolean'),
     lists: DS.hasMany('list', {async:true}),
     members: DS.hasMany('user'),
-    user: DS.belongsTo('user')
+    user: DS.belongsTo('user'),
+    organisation: DS.belongsTo('organisation')
 });
 
 TrelloApp.Board.FIXTURES = [
@@ -17,7 +18,8 @@ TrelloApp.Board.FIXTURES = [
         isMine: true,
         hasUpdates: true,
         lists: [1, 2, 3],
-        user: 1
+        user: 1,
+        organisation: 1
     },
     {
         id: 2,
