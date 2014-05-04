@@ -26,11 +26,26 @@
 
   <script type="text/x-handlebars" id="board">
     <h2>{{name}}</h2>
-    <ul class="lists">
-      {{#each list in lists}}
-        <li>{{list.name}}</li>
-      {{/each}}
-    </ul>
+    <div class="lists">
+      <ul>
+        {{#each list in lists}}
+          <li>{{list.name}}</li>
+          <ul>
+            {{#each card in list.cards}} 
+              <li>{{#link-to 'card' card}}{{card.name}}{{/link-to}}</li>            
+            {{/each}}
+              <li><button>Add a card..</button></li>  
+          </ul>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="card">
+      {{outlet}}
+    </div>
+  </script>
+  
+  <script type="text/x-handlebars" id="card">
+    <h2>{{name}}</h2>
   </script>
   
   
