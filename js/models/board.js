@@ -6,6 +6,7 @@ TrelloApp.Board = DS.Model.extend({
     hasUpdates: DS.attr('boolean'),
     isStarred: DS.attr('boolean'),
     lists: DS.hasMany('list', {async:true}),
+    members: DS.hasMany('user'),
     user: DS.belongsTo('user')
 });
 

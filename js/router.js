@@ -11,6 +11,9 @@ TrelloApp.Router.map(function () {
         this.resource('card', {path: '/:card_id'});
     });
   });
+  this.resource('organisations', function(){
+    this.resource('organisation', {path: '/org_id'});
+  });
 });
 
 
@@ -22,19 +25,7 @@ TrelloApp.ApplicationRoute = Ember.Route.extend({
   }
 });
 
-TrelloApp.BoardRoute = Ember.Route.extend({
-  model: function(params){
-    return this.store.find('board', params.board_id);
-  }
-});
 
-
-TrelloApp.CardRoute = Ember.Route.extend({
-  model: function(params){
-    return this.store.find('card', params.card_id);
-  }
-});
-  
 TrelloApp.BoardsIndexRoute = Ember.Route.extend({
   model: function () {
     return this.store.find('board');

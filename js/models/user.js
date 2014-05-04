@@ -4,7 +4,8 @@ TrelloApp.User = DS.Model.extend({
     name: DS.attr('string'),
     userName: DS.attr('string'),
     avatar: DS.attr('string'),
-    boards: DS.hasMany('board')
+    boards: DS.hasMany('board'),
+    organisations: DS.hasMany('organisation')
 });
 
 TrelloApp.User.FIXTURES = [{
