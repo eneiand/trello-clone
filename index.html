@@ -9,17 +9,19 @@
 <body>  
     
 <script type="text/x-handlebars" id="application">
-  <div id="header">
-    <button>Boards</button>
-    {{input value="search.."}}
-    <a href="/" title="Go back to your boards page.">Trello-clone</a>
-    <button title="Add a new board or organization">+</button>
-    <span id="user">
-      <img height="30" width="30" {{bind-attr src=avatar}} {{bind-attr alt=altName}} {{bind-attr title=altName}} >
-      <button>{{name}}</button>
-    </span>
-    <button title="Nofications. Click to view notifications."></button>
-  </div>
+    <nav class="top-bar" data-topbar>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="#">Boards</a></li>
+        </ul>
+        <ul class="right">
+          <li><a title="Add a new board or organization" href="#">+</a></li>
+          <li><img {{bind-attr src=avatar}} {{bind-attr alt=altName}} {{bind-attr title=altName}}></li>
+          <li><a href="#">{{name}}</a></li>
+          <li><a href="#">Notifications</a></li>
+        </ul>
+      </section>  
+    </nav>
   {{outlet}}
 </script>
   
@@ -124,5 +126,11 @@
   <script src="js/controllers/applicationController.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
+  
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>
