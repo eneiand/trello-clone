@@ -9,10 +9,25 @@
 <body>  
     
 <script type="text/x-handlebars" id="application">
+    
     <nav class="top-bar" data-topbar>
+      
+      <ul class="title-area">
+        <li class="name"><!-- Leave this empty --></li>
+      </ul>
       <section class="top-bar-section">
         <ul class="left">
           <li><a href="#">Boards</a></li>
+          <li class="has-form">
+            <div class="row collapse">
+              <div class="large-8 small-9 columns">
+                <input type="text" placeholder="Find Stuff">
+              </div>
+              <div class="large-4 small-3 columns">
+                <a href="#" class="alert button expand">Search</a>
+              </div>
+            </div>
+          </li>
         </ul>
         <ul class="right">
           <li><a title="Add a new board or organization" href="#">+</a></li>
@@ -20,8 +35,9 @@
           <li><a href="#">{{name}}</a></li>
           <li><a href="#">Notifications</a></li>
         </ul>
-      </section>  
+      </section>
     </nav>
+
   {{outlet}}
 </script>
   
