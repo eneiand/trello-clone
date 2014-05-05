@@ -65,13 +65,11 @@
   
   <script type="text/x-handlebars" data-template-name="boards/starred">
     <h3>{{#link-to 'boards.starred'}}Starred Boards{{/link-to}}</h3>
-    <ul class="boards">
+    <ul class="inline-list">
       {{#each}}
         {{#if isStarred}}
-          <li>
-            <div {{bind-attr class=":board hasUpdates"}}>
+          <li  {{bind-attr class=":board hasUpdates"}}>
               {{#link-to 'board' this}} {{name}} {{/link-to}}
-            </div>
           </li>
         {{/if}}
       {{/each}}
@@ -80,13 +78,13 @@
 
   <script type="text/x-handlebars" data-template-name="boards/mine">
     <h3>{{#link-to 'boards.mine'}}My Boards{{/link-to}}</h3>
-    <ul class="boards">
+    <ul class="inline-list">
       {{#each}}
         {{#unless isStarred}}
           {{#if isMine}}
-            <div {{bind-attr class=":board hasUpdates"}}>
+            <li {{bind-attr class=":board hasUpdates"}}>
               {{#link-to 'board' this}} {{name}} {{/link-to}}
-            </div>
+            </li>
           {{/if}}
         {{/unless}}
       {{/each}}
@@ -95,17 +93,17 @@
     
   <script type="text/x-handlebars" data-template-name="boards/other">
     <h3>{{#link-to 'boards.other'}}Other Boards{{/link-to}}</h3>
-    <ul class="boards">
-      {{#each}}
-        {{#unless isStarred}}
-          {{#unless isMine}}
-            <div {{bind-attr class=":board hasUpdates"}}>
-              {{#link-to 'board' this}} {{name}} {{/link-to}}
-            </div>
-          {{/unless}}
-        {{/unless}}
-      {{/each}}
-    </ul>
+        <ul class="inline-list">
+          {{#each}}
+            {{#unless isStarred}}
+              {{#unless isMine}}
+                <li {{bind-attr class=":board hasUpdates"}}>
+                  {{#link-to 'board' this}} {{name}} {{/link-to}}
+                </li>
+              {{/unless}}
+            {{/unless}}
+          {{/each}}
+        </ul>
   </script>
      
     
