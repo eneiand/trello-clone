@@ -79,7 +79,6 @@
   
   
  <script type="text/x-handlebars" id="boards/index">
-    <h2>Boards</h2>
       {{outlet starred}}
       {{outlet myBoards}}
       {{outlet other}}
@@ -91,7 +90,7 @@
       {{#each}}
         {{#if isStarred}}
           <li  {{bind-attr class=":board hasUpdates"}}>
-              {{#link-to 'board' classNames="button large radius"}} {{name}} {{/link-to}}
+              {{#link-to 'board' this classNames="button large radius"}} {{name}} {{/link-to}}
           </li>
         {{/if}}
       {{/each}}
@@ -105,7 +104,7 @@
         {{#unless isStarred}}
           {{#if isMine}}
             <li {{bind-attr class=":board hasUpdates"}}>
-              {{#link-to 'board' classNames="button large radius"}} {{name}} {{/link-to}}
+              {{#link-to 'board' this classNames="button large radius"}} {{name}} {{/link-to}}
             </li>
           {{/if}}
         {{/unless}}
