@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+  
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trello-clone</title>
+  <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/foundation.css">
+
+  <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>  
     
@@ -85,7 +91,7 @@
       {{#each}}
         {{#if isStarred}}
           <li  {{bind-attr class=":board hasUpdates"}}>
-              {{#link-to 'board' this}} {{name}} {{/link-to}}
+              {{#link-to 'board' classNames="button large radius"}} {{name}} {{/link-to}}
           </li>
         {{/if}}
       {{/each}}
@@ -99,7 +105,7 @@
         {{#unless isStarred}}
           {{#if isMine}}
             <li {{bind-attr class=":board hasUpdates"}}>
-              {{#link-to 'board' this}} {{name}} {{/link-to}}
+              {{#link-to 'board' classNames="button large radius"}} {{name}} {{/link-to}}
             </li>
           {{/if}}
         {{/unless}}
@@ -114,7 +120,7 @@
             {{#unless isStarred}}
               {{#unless isMine}}
                 <li {{bind-attr class=":board hasUpdates"}}>
-                  {{#link-to 'board' this}} {{name}} {{/link-to}}
+                  {{#link-to 'board' this classNames="button large radius"}} {{name}} {{/link-to}}
                 </li>
               {{/unless}}
             {{/unless}}
