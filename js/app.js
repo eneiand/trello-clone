@@ -31,3 +31,7 @@ TrelloApp.Store = DS.Store.extend({
         }
     })
 });
+
+Ember.LinkView.reopen({
+  attributeBindings: ['data-reveal-id']
+});

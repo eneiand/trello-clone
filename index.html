@@ -55,22 +55,24 @@
       <span id="org-name">{{organisation.name}}</span> 
     </div>
     
-    <div class="lists">
-      <ul>
+    <div class="lists row">
+      
         {{#each list in lists}}
+        <div class="small-2 columns">
+        <ul>
           <li>{{list.name}}</li>
           <ul>
             {{#each card in list.cards}} 
-              <li>{{#link-to 'card' card}}{{card.name}}{{/link-to}}</li>            
+              <li>{{#link-to 'card' card data-reveal-id="myModal"}}{{card.name}}{{/link-to}}</li>            
             {{/each}}
               <li><button>Add a card..</button></li>  
           </ul>
+        </ul>
+        </div>
         {{/each}}
-      </ul>
+      
     </div>
-    <div class="card">
       {{outlet}}
-    </div>
   </script>
   
   <script type="text/x-handlebars" id="card">
