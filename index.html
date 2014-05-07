@@ -45,6 +45,7 @@
     </nav>
 
   {{outlet}}
+  {{outlet modal}}
 </script>
   
 
@@ -63,7 +64,7 @@
           <li>{{list.name}}</li>
           <ul>
             {{#each card in list.cards}} 
-              <li>{{#link-to 'card' card data-reveal-id="myModal"}}{{card.name}}{{/link-to}}</li>            
+              <li>{{#link-to 'card' card}}{{card.name}}{{/link-to}}</li>            
             {{/each}}
               <li><button>Add a card..</button></li>  
           </ul>
