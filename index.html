@@ -66,7 +66,7 @@
             {{#each card in list.cards}} 
               <li>{{#link-to 'card' card}}{{card.name}}{{/link-to}}</li>            
             {{/each}}
-              <li><button>Add a card..</button></li>  
+              <li><button {{action 'newCard'}}>Add a card..</button></li>  
           </ul>
         </ul>
         </div>

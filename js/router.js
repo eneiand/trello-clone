@@ -17,6 +17,19 @@ TrelloApp.Router.map(function () {
 });
 
 
+TrelloApp.BoardController = Ember.ObjectController.extend({
+  actions: {
+    newCard: function() {
+       var card = this.store.createRecord('card', {
+          name: "New Card",
+          board: 1
+        });
+      
+        card.save();
+    }
+  }
+});
+
 TrelloApp.ApplicationRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('user').then(function(result){
